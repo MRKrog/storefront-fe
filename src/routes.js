@@ -1,17 +1,17 @@
-import Home from "./views/Home/Home";
+import Storefront from "./views/Storefront";
 
 const routes = [
   {
-    path: "/home",
-    name: "Home",
-    component: Home
+    path: "/index",
+    name: "Storefront",
+    component: Storefront
   },
   {
     redirect: true,
     path: "/",
-    to: "/home",
-    name: "Home",
-    component: Home
+    to: "/index",
+    name: "Storefront",
+    component: Storefront
   }
 ];
 
