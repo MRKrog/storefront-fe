@@ -1,9 +1,9 @@
-# MKrog React Template
+# MKrog Store Front
 
 ## Overview:
-This is my react template that I am always changing and updating!
+Building an interactive storefront for a display of shoes
 
-## Preview:
+<!-- ## Preview: -->
 <!-- ![Homepage Preview](src/images/Homepage.png) -->
 
 ## Getting Started:
@@ -11,7 +11,7 @@ This is my react template that I am always changing and updating!
 These instructions will get a copy of the project up and running on your local machine for usage and testing purposes.
 
 ### Frontend
-clone down the repo: ```$ git clone https://github.com/MRKrog/mk-template```
+clone down the repo: ```$ git clone https://github.com/MRKrog/storefront-fe```
 
 cd into directory and run npm install: ```$ npm install```
 
@@ -24,11 +24,8 @@ Palette Picker was built using:
 - [Redux.js](https://redux.js.org/)
 - [SCSS](https://sass-lang.com/)
 
-And tested using:
-- [Enzyme](https://airbnb.io/enzyme/) & [Jest](https://airbnb.io/enzyme/docs/guides/jest.html)
-
 ## Contributors
 - [Michael Krog](https://github.com/MRKrog)
 
 ---
-**[Back to top](https://github.com/MRKrog/mk-template)**
+**[Back to top](https://github.com/MRKrog/storefront-fe)**

@@ -3,5 +3,10 @@
 
   .App-Content {
     display: flex;
+    background-image: url("./assets/images/bg/storefront-bg.jpg");
+    background-size: cover;
+    min-height: 100vh;
+    height: 100%;
   }
+  
 }

@@ -34,18 +34,22 @@ class TiltPhaseSix extends Component {
     this.handleMouseMove = this.handleMouseMove.bind(this, this.props.handleMouseMove)
     this.handleMouseLeave = this.handleMouseLeave.bind(this, this.props.handleMouseLeave)
   }
+
   componentDidMount() {
     this.element = findDOMNode(this)
   }
+
   componentWillUnmount() {
     clearTimeout(this.transitionTimeout)
     cancelAnimationFrame(this.updateCall)
   }
+
   handleMouseEnter(cb = () => { }, e) {
     this.updateElementPosition()
     this.setTransition()
     return cb(e)
   }
+
   reset() {
     window.requestAnimationFrame(() => {
       this.setState(prevState => ({
@@ -56,6 +60,7 @@ class TiltPhaseSix extends Component {
       }))
     })
   }
+
   handleMouseMove(cb = () => { }, e) {
     e.persist()
     if (this.updateCall !== null) {
@@ -65,6 +70,7 @@ class TiltPhaseSix extends Component {
     this.updateCall = requestAnimationFrame(this.update.bind(this, e))
     return cb(e)
   }
+
   setTransition() {
     clearTimeout(this.transitionTimeout)
     this.setState(prevState => ({
@@ -82,6 +88,7 @@ class TiltPhaseSix extends Component {
       }))
     }, this.settings.speed)
   }
+
   handleMouseLeave(cb = () => { }, e) {
     this.setTransition()
     if (this.settings.reset) {
@@ -89,6 +96,7 @@ class TiltPhaseSix extends Component {
     }
     return cb(e)
   }
+
   getValues(e) {
     const x = (e.nativeEvent.clientX - this.left) / this.width
     const y = (e.nativeEvent.clientY - this.top) / this.height
@@ -105,6 +113,7 @@ class TiltPhaseSix extends Component {
       percentageY,
     }
   }
+
   updateElementPosition() {
     const rect = this.element.getBoundingClientRect()
     this.width = this.element.offsetWidth
@@ -112,6 +121,7 @@ class TiltPhaseSix extends Component {
     this.left = rect.left
     this.top = rect.top
   }
+
   update(e) {
     const values = this.getValues(e)
     this.setState(prevState => ({
@@ -122,11 +132,14 @@ class TiltPhaseSix extends Component {
     }))
     this.updateCall = null
   }
+
   render() {
+    
     const style = {
       ...this.props.style,
       ...this.state.style
     }
+
     return (
       <div
         style={style}
