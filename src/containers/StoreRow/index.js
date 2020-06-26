@@ -7,14 +7,20 @@ const options = {
   scale: 1.2, // amount to zoom in onMouseEnter (ie: 1 = 100%, 2 = 200%)
 }
 
-const StoreRow = () => {
+const StoreRow = (props) => {
+
+  const setOpenDialog = (e) => {
+    props.handleOpen(e)
+  }
 
   return (
-    <TiltPhaseSix options={options} style={{ height: "100%", cursor: 'pointer' }}>
-      <div className="imgContainer">
-        <img className="imageDevice" src={require(`../../assets/images/shoes/shoe1.png`)} alt="Test" style={{ width: '200px' }} />
-      </div>
-    </TiltPhaseSix>
+    <div onClick={() => setOpenDialog('123')}>
+      <TiltPhaseSix options={options} style={{ height: "100%", cursor: 'pointer' }} >
+        <div className="imgContainer">
+          <img className="imageDevice" src={require(`../../assets/images/shoes/shoe1.png`)} alt="Test" style={{ width: '200px' }} />
+        </div>
+      </TiltPhaseSix>
+    </div>
   )
 }
 
